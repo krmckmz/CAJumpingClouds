@@ -7,7 +7,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var list = new List<int>() { 0, 0,0, 1, 0, 0 };
+            var list = new List<int>() { 0, 0, 0, 1, 0, 0 };
             int stepCount = CalculateStepCount(list);
             Console.WriteLine(stepCount);
         }
@@ -18,14 +18,12 @@ namespace ConsoleApp1
 
             while (index < c.Count - 1)
             {
-                if (c[index + 2] == 1)
+                if ((index + 2 < c.Count && c[index + 2] == 1)||(index+1==c.Count-1))
                 {
                     index++;
                     stepCount++;
-                    continue;
                 }
-
-                if (c[index + 1] == 1)
+                else
                 {
                     index += 2;
                     stepCount++;
